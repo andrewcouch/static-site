@@ -1,0 +1,17 @@
+{% extends '..\templates\layout.html' %}
+
+{% block content %}
+	<div class="container">
+		<div class="section">
+			<h2>404 : File Not Found</h2>
+			<p>
+				Whatever you were looking for, it isn't here. 
+				<br/><br/>
+				Try looking through these pages.
+				<ul>
+					<li><a href="{{tplFile.to_base}}{{home_link}}">Home Page</a></li>
+				</ul>
+			</p>
+		</div>
+	</div>
+{% endblock %}

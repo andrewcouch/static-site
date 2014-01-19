@@ -1,0 +1,23 @@
+{% extends '..\..\templates\blog.html' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block header %}	
+	<div class="container" id="tagline">
+		<h1>Can put more HTML into the header</h1>
+	</div>
+	{% parent %}
+{% endblock %}
+
+{% block post %}
+<h2>Articles</h2>
+<p>I have a number of blogs for different subjects. This is where articles end up that I write about technology, web development, freelancing and the like.</p>
+{% for post in files %}
+  {% if loop.first %}<div class="posts">{% endif %}
+  <p><span class="title"><a href="{{post.path}}">{{ post.title }}</a></span>
+  	<span class="date">{{post.modified|date('Y-m-d')}}</a></span>
+  	<span class="summary">{{post.summary}}</span>
+  </p>
+  {% if loop.last %}</div>{% endif %}
+{% endfor %}
+{% endblock %}

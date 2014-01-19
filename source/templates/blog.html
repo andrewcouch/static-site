@@ -1,0 +1,16 @@
+{% extends '..\templates\layout.html' %}
+
+{% block content %}
+{% block header %}{% endblock %}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8">
+			<div class="section">
+	{% block post %}{% endblock %}
+			</div>
+		</div>
+		{% include "../templates/sidebar.html" %}
+	</div>
+	{% include "../templates/footer.html" %}
+</div>
+{% endblock %}	

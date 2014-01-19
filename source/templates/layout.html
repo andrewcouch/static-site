@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block meta %}
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		{% endblock %}
+		<title>{% block title %}{{home_title}}{% endblock %}</title>
+		{% block head %}
+		{#<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>#}
+		<link rel="stylesheet" href="{{tplFile.to_base}}resource/css/{{resource_basename}}-custom.min.css">
+		{#<script src="{{tplFile.to_base}}resource/js/jquery-1.10.2.min.js"></script>
+		<script src="{{tplFile.to_base}}resource/js/{{resource_basename}}.min.js"></script>	#}
+		{% endblock %}
+	</head>
+	<body class="{% block body-class %}wide{% endblock %}">
+		<div id="header">
+			<div class="container">	
+				<span class="pull-left homelink"><a href="{{tplFile.to_base}}{{home_link}}">Home</a></span>
+				<ul class="pull-right">
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="wrap">	
+		{% block content %}{% endblock %}
+		</div>
+		<div id="footer">
+			<div class="container">
+				<span class="pull-left">Copyright &copy; 2014 - Andrew Couch</span>
+			</div>
+		</div>		
+		{% block bottom-body %}{% endblock %}
+	</body>
+</html>
